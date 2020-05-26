@@ -2,7 +2,7 @@ declare module "convert-units" {
     type uDistance = "mm" | "cm" | "m" | "km" | "in" | "ft-us" | "ft" | "mi"; // Distance
     type uArea = "mm2" | "cm2" | "m2" | "ha" | "km2" | "in2" | "ft2" | "ac" | "mi2"; // Area
     type uMass = "mcg" | "mg" | "g" | "kg" | "oz" | "lb" | "mt" | "t" // Mass
-    type uVolume = "mm3" | "cm3" | "ml" | "l" | "kl" | "m3" | "km3" | "tsp" | "Tbs" | "in3" | "fl-oz" | "cup" | "pnt" | "qt" | "gal" | "ft3" | "yd3" // Volume
+    type uVolume = "nL" | "μL" | "mm3" | "cm3" | "mL" | "L" | "kl" | "m3" | "km3" | "tsp" | "Tbs" | "in3" | "fl-oz" | "cup" | "pnt" | "qt" | "gal" | "ft3" | "yd3" // Volume
     type uVolumeFlowRate = "mm3/s" | "cm3/s" | "ml/s" | "cl/s" | "dl/s" | "l/s" | "l/min" | "l/h" | "kl/s" | "kl/min" | "kl/h" | "m3/s" | "m3/min" | "m3/h" | "km3/s" | "tsp/s" | "Tbs/s" | "in3/s" | "in3/min" | "in3/h" | "fl-oz/s" | "fl-oz/min" | "fl-oz/h" | "cup/s" | "pnt/s" | "pnt/min" | "pnt/h" | "qt/s" | "gal/s" | "gal/min" | "gal/h"  | "ft3/s" | "ft3/min" | "ft3/h" | "yd3/s"  | "yd3/min" | "yd3/h"; // Volume Flow Rate
     type uTemperature = "C" | "F" | "K" | "R"; // Temperature
     type uTime = "ns" | "mu" | "ms" | "s" | "min" | "h" | "d" | "week" | "month" | "year"; // Time
@@ -21,7 +21,10 @@ declare module "convert-units" {
     type uEnergy = "Wh" | "mWh" | "kWh" | "MWh" | "GWh" | "J" | "kJ"; // Energy
     type uReactiveEnergy = "VARh" | "mVARh" | "kVARh" | "MVARh" | "GVARH"; // Reactive Energy
     type uAngle = "deg" | "rad" | "grad" | "arcmin" | "arcsec"; // Angle
-
+    type uLiquidUnits = "%" | "X" | "U/mL"; //Liquid Units
+    type uMolarity = "nM" | "µM" | "mM" | "M"; // Molarity
+    type UPercentageToSolid = "%/(s)" // PercentageToSolid
+    type uWeightPerVolume = "μg/mL" | "μg/μL" | "mg/mL" | "g/L" // Weight Per Volume
 
     type unit = uDistance 
               | uArea 
@@ -44,7 +47,11 @@ declare module "convert-units" {
               | uReactivePower
               | uEnergy
               | uReactiveEnergy
-              | uAngle;
+              | uAngle
+              | uLiquidUnits
+              | uMolarity
+              | UPercentageToSolid
+              | uWeightPerVolume;
 
     type measure = "distance" 
                  | "area" 
@@ -67,7 +74,11 @@ declare module "convert-units" {
                  | "reactivePower"
                  | "energy"
                  | "reactiveEnergy"
-                 | "angle";
+                 | "angle"
+                 | "liquidUnits"
+                 | "molarity"
+                 | "percentageToSolid"
+                 | "weightPerVolume";
 
     type system = "metric"
                 | "imperial"
